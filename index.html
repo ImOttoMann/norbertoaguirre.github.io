@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Formulario Calificación de Oportunidades</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; }
+  h2 { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+  label { display: block; margin-top: 10px; font-weight: bold; }
+  input, select, textarea { width: 100%; padding: 8px; margin-top: 4px; }
+  button { margin-top: 20px; padding: 10px 15px; border: none; background: #4CAF50; color: white; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<h1>Calificación de Oportunidades para Proyectos de TI</h1>
+
+<form id="opportunityForm">
+  
+  <h2>1. Información General</h2>
+  <label>Nombre del Proyecto/Oportunidad:</label>
+  <input type="text" name="nombre_proyecto" required />
+
+  <label>Fecha de Identificación:</label>
+  <input type="date" name="fecha_identificacion" />
+
+  <label>Fuente de la Oportunidad:</label>
+  <input type="text" name="fuente" />
+
+  <label>Industria del Cliente:</label>
+  <input type="text" name="industria" />
+
+  <label>Tipo de Proyecto de TI:</label>
+  <input type="text" name="tipo_proyecto" />
+
+  <h2>2. Entendimiento del Cliente</h2>
+  <label>Nombre de la Empresa Cliente:</label>
+  <input type="text" name="empresa_cliente" />
+
+  <label>Contacto Principal (Nombre, Cargo, Correo, Teléfono):</label>
+  <textarea name="contacto_principal"></textarea>
+
+  <label>Problema/Necesidad del Cliente:</label>
+  <textarea name="problema_cliente"></textarea>
+
+  <label>Objetivos del Cliente:</label>
+  <textarea name="objetivos_cliente"></textarea>
+
+  <label>Expectativas Clave del Cliente:</label>
+  <textarea name="expectativas_cliente"></textarea>
+
+  <label>Valor Percibido por el Cliente:</label>
+  <textarea name="valor_percibido"></textarea>
+
+  <label>Urgencia de la Oportunidad:</label>
+  <input type="text" name="urgencia" />
+
+  <h2>3. Aspectos Financieros</h2>
+  <label>Presupuesto Estimado:</label>
+  <input type="text" name="presupuesto_estimado" />
+
+  <label>Moneda:</label>
+  <input type="text" name="moneda" />
+
+  <label>Competencia Identificada:</label>
+  <textarea name="competencia_identificada"></textarea>
+
+  <label>Rango de Inversión Esperado (Interno):</label>
+  <input type="text" name="rango_inversion" />
+
+  <label>Potencial de Crecimiento/Proyectos Futuros:</label>
+  <textarea name="potencial_crecimiento"></textarea>
+
+  <label>Términos de Pago Preferidos:</label>
+  <input type="text" name="terminos_pago" />
+
+  <h2>4. Responsables y Tomadores de Decisión</h2>
+  <label>Champion Interno en el Cliente:</label>
+  <input type="text" name="champion_cliente" />
+
+  <label>Tomadores de Decisión Clave:</label>
+  <textarea name="tomadores_decision"></textarea>
+
+  <label>Influenciadores Clave:</label>
+  <textarea name="influenciadores"></textarea>
+
+  <label>Nivel de Acceso a Tomadores de Decisión:</label>
+  <input type="text" name="nivel_acceso" />
+
+  <label>Interés/Compromiso de Stakeholders Clave:</label>
+  <textarea name="compromiso_stakeholders"></textarea>
+
+  <h2>5. Fechas y Plazos Clave</h2>
+  <label>Fecha Límite para Presentación:</label>
+  <input type="date" name="fecha_limite" />
+
+  <label>Fecha Estimada de Decisión:</label>
+  <input type="date" name="fecha_decision" />
+
+  <label>Fecha de Inicio Estimada:</label>
+  <input type="date" name="fecha_inicio" />
+
+  <label>Plazo de Ejecución Estimado:</label>
+  <input type="text" name="plazo_ejecucion" />
+
+  <label>Hitos Clave del Cliente:</label>
+  <textarea name="hitos_clave"></textarea>
+
+  <h2>6. Retos, Obstáculos y Riesgos</h2>
+  <label>Retos Técnicos Identificados:</label>
+  <textarea name="retos_tecnicos"></textarea>
+
+  <label>Obstáculos Organizacionales/Políticos:</label>
+  <textarea name="obstaculos"></textarea>
+
+  <label>Riesgos Financieros:</label>
+  <textarea name="riesgos_financieros"></textarea>
+
+  <label>Riesgos de Cronograma:</label>
+  <textarea name="riesgos_cronograma"></textarea>
+
+  <label>Dependencias Externas:</label>
+  <textarea name="dependencias"></textarea>
+
+  <label>Competencia (ventajas):</label>
+  <textarea name="competencia_ventajas"></textarea>
+
+  <label>Requisitos No Claros/Ambiguos:</label>
+  <textarea name="requisitos_ambiguos"></textarea>
+
+  <h2>7. Calificación de la Oportunidad (1-5)</h2>
+  <label>Claridad del Problema/Necesidad (0.15):</label>
+  <input type="number" min="1" max="5" name="claridad_problema" />
+
+  <label>Alineación con Expectativas (0.10):</label>
+  <input type="number" min="1" max="5" name="alineacion_expectativas" />
+
+  <label>Presupuesto Adecuado (0.20):</label>
+  <input type="number" min="1" max="5" name="presupuesto_adecuado" />
+
+  <label>Potencial de ROI (0.15):</label>
+  <input type="number" min="1" max="5" name="potencial_roi" />
+
+  <label>Acceso a Tomadores de Decisión (0.10):</label>
+  <input type="number" min="1" max="5" name="acceso_decision" />
+
+  <label>Compromiso de Stakeholders (0.10):</label>
+  <input type="number" min="1" max="5" name="compromiso" />
+
+  <label>Realismo del Cronograma (0.05):</label>
+  <input type="number" min="1" max="5" name="realismo_cronograma" />
+
+  <label>Complejidad de Retos (0.05):</label>
+  <input type="number" min="1" max="5" name="complejidad_retos" />
+
+  <label>Nivel de Riesgo General (0.10):</label>
+  <input type="number" min="1" max="5" name="nivel_riesgo" />
+
+  <button type="submit">Enviar</button>
+</form>
+
+<script>
+// EJEMPLO: capturar envío y enviar a Google Sheets via Apps Script Web App
+// Necesitarás crear un Google Apps Script que reciba POST y guarde los datos
+const form = document.getElementById('opportunityForm');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const data = new FormData(form);
+  fetch('https://script.google.com/macros/s/AKfycbz4kSFWOKjQ6BlaV6xNYg5n6ZR3NMPWW6oGVGIAgnzXVXdXP8k2-o-GZoxkFdPsOqqmVQ/exec', { // Reemplaza por tu URL de Web App
+    method: 'POST',
+    body: data
+  })
+  .then(response => alert('Formulario enviado correctamente'))
+  .catch(error => alert('Error al enviar: ' + error));
+});
+</script>
+
+</body>
+</html>
