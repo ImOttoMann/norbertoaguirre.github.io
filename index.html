@@ -2,179 +2,321 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Formulario Calificación de Oportunidades</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultoría IT - Abraham Aguirre</title>
 <style>
-  body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; }
-  h2 { background: #f4f4f4; padding: 10px; border-radius: 5px; }
-  label { display: block; margin-top: 10px; font-weight: bold; }
-  input, select, textarea { width: 100%; padding: 8px; margin-top: 4px; }
-  button { margin-top: 20px; padding: 10px 15px; border: none; background: #4CAF50; color: white; cursor: pointer; }
+  body { margin:0; font-family:Arial, sans-serif; background:#f4f4f4; color:#FFFFFF; }
+  header { background:#004466; color:#fff; padding:1rem 2rem; text-align:center; }
+  nav { display:flex; justify-content:center; background:#033c50; }
+  nav a { color:#fff; text-decoration:none; padding:1rem; display:block; }
+  nav a:hover { background:#02627c; }
+  section { padding:2rem; max-width:1000px; margin:auto; background-color: rgba(0, 0, 0, 0.7); margin-top:1rem; border-radius:8px; }
+  h1, h2 { color:#FFFFFF; }
+  footer { text-align:center; padding:1rem; font-size:0.9rem; color:#fff; }
+  form { display:flex; flex-direction:column; }
+  label { margin-top:0.5rem; }
+  input, textarea { padding:0.5rem; margin-top:0.2rem; border:1px solid #ccc; border-radius:4px; }
+  button { margin-top:1rem; padding:0.7rem; background:#004466; color:#FFF; border:none; border-radius:4px; cursor:pointer; }
+  button:hover { background:#02627c; }
+
+    /* 🌟 INICIO: Imagen de fondo con opacidad */
+    body::before {
+      content: "";
+      position: fixed; /* cubrir toda la pantalla */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://raw.githubusercontent.com/ImOttoMann/ImOttoMann.github.io/refs/heads/main/images/cubes-2492010_1920.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.8; /* cambia de 0 (totalmente transparente) a 1 (opaco) */
+      z-index: -1; /* para que quede detrás del contenido */
+    }
+    /* 🌟 FIN: Imagen de fondo con opacidad */
+
+    /* Contenido de ejemplo para probar */
+    h1 {
+      color: white;
+      text-align: center;
+      margin-top: 100px;
+    }
+    p {
+      color: white;
+      text-align: center;
+    }
+
+  /* --- ESTO ES NUEVO --- */
+  .img-container {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 0px; /* opcional: bordes redondeados */
+    margin-bottom: 0.5rem;
+  }
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* --- CARRUSEL --- */
+.carousel {
+      position: relative;
+      max-width: 400px; /* ajusta el tamaño al gusto */
+      margin: auto;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+    .prev { left: 10px; }
+    .next { right:10px; }
+
+  /* --- BOTON COMEBACK --- */
+
+.boton-regreso {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 </style>
 </head>
 <body>
 
-<h1>Calificación de Oportunidades para Proyectos de TI</h1>
+<header class="text-center text-white" style="background-color: #004466; padding: 0px 0px;">
+  <img src="https://raw.githubusercontent.com/ImOttoMann/ImOttoMann.github.io/refs/heads/main/images/BannerNA.png" 
+       alt="Banner consultoría IT" 
+       class="img-fluid mb-4 rounded" 
+       style="max-height:300px;">
+</header>
 
-<form id="opportunityForm">
-  
-  <h2>1. Información General</h2>
-  <label>Nombre del Proyecto/Oportunidad:</label>
-  <input type="text" name="nombre_proyecto" required />
+<nav>
+  <a href="#home">Inicio</a>
+  <a href="#quien-soy">Quién Soy</a>
+  <a href="#experiencia">Experiencia IT</a>
+  <a href="#consultoria">Consultoría de Negocios</a>
+  <a href="#proyectos">Proyectos</a>
+  <a href="#asessment">Asessments</a>
+  <a href="#contacto">Contacto</a>
+</nav>
 
-  <label>Fecha de Identificación:</label>
-  <input type="date" name="fecha_identificacion" />
+<section id="home">
+  <h2>🖥️ Bienvenido</h2>
+  <p>Ofrezco servicios de consultoría especializada en proyectos de tecnologías de la información, con un enfoque integral para ayudar a empresas a transformar sus operaciones. Mi objetivo es impulsar la eficiencia y competitividad mediante soluciones modernas, seguras y totalmente adaptadas a las necesidades específicas de cada organización, asegurando resultados que generan valor real y sostenible.</p>
+</section>
 
-  <label>Fuente de la Oportunidad:</label>
-  <input type="text" name="fuente" />
+<section id="quien-soy">
+  <h2> 👤 Quién Soy</h2>
+<div id="contenido-visible">
+  Soy un consultor especializado en Tecnologías de la Información (IT Consultant) y Desarrollo de Negocios (Business Development), un perfil que me permite combinar dos perspectivas clave: la técnica y la estratégica.
 
-  <label>Industria del Cliente:</label>
-  <input type="text" name="industria" />
+Por un lado, ayudo a empresas a aprovechar el potencial de la tecnología para optimizar sus procesos, mejorar su infraestructura y avanzar en su transformación digital. Esto incluye:
+</div>
 
-  <label>Tipo de Proyecto de TI:</label>
-  <input type="text" name="tipo_proyecto" />
+<div id="contenido-oculto" style="display: none;">
+  <p>Desde el diseño e implementación de soluciones IT (como sistemas proyectos llave en mano de infraestructura tecnologica para naves industriales o servidores y proyectos de ciberseguridad) hasta la identificación de herramientas que impulsen la eficiencia operativa.
 
-  <h2>2. Entendimiento del Cliente</h2>
-  <label>Nombre de la Empresa Cliente:</label>
-  <input type="text" name="empresa_cliente" />
+Por otro lado, me enfoco en impulsar el crecimiento del negocio: detectar nuevas oportunidades de mercado, desarrollar propuestas de valor, diseñar estrategias para expandir ingresos y fortalecer la presencia comercial. Colaboro estrechamente con áreas de marketing, ventas y dirección para crear modelos de negocio sostenibles y competitivos.
 
-  <label>Contacto Principal (Nombre, Cargo, Correo, Teléfono):</label>
-  <textarea name="contacto_principal"></textarea>
+En conjunto, mi objetivo es claro: traducir las necesidades y retos de tu negocio en soluciones tecnológicas viables y rentables, generando así ventaja competitiva y crecimiento sostenible.
 
-  <label>Problema/Necesidad del Cliente:</label>
-  <textarea name="problema_cliente"></textarea>
+Si buscas a alguien que entienda de tecnología pero también piense en resultados de negocio, puedo ayudarte a llevar tus ideas y proyectos al siguiente nivel.</p>
+</div>
 
-  <label>Objetivos del Cliente:</label>
-  <textarea name="objetivos_cliente"></textarea>
-
-  <label>Expectativas Clave del Cliente:</label>
-  <textarea name="expectativas_cliente"></textarea>
-
-  <label>Valor Percibido por el Cliente:</label>
-  <textarea name="valor_percibido"></textarea>
-
-  <label>Urgencia de la Oportunidad:</label>
-  <input type="text" name="urgencia" />
-
-  <h2>3. Aspectos Financieros</h2>
-  <label>Presupuesto Estimado:</label>
-  <input type="text" name="presupuesto_estimado" />
-
-  <label>Moneda:</label>
-  <input type="text" name="moneda" />
-
-  <label>Competencia Identificada:</label>
-  <textarea name="competencia_identificada"></textarea>
-
-  <label>Rango de Inversión Esperado (Interno):</label>
-  <input type="text" name="rango_inversion" />
-
-  <label>Potencial de Crecimiento/Proyectos Futuros:</label>
-  <textarea name="potencial_crecimiento"></textarea>
-
-  <label>Términos de Pago Preferidos:</label>
-  <input type="text" name="terminos_pago" />
-
-  <h2>4. Responsables y Tomadores de Decisión</h2>
-  <label>Champion Interno en el Cliente:</label>
-  <input type="text" name="champion_cliente" />
-
-  <label>Tomadores de Decisión Clave:</label>
-  <textarea name="tomadores_decision"></textarea>
-
-  <label>Influenciadores Clave:</label>
-  <textarea name="influenciadores"></textarea>
-
-  <label>Nivel de Acceso a Tomadores de Decisión:</label>
-  <input type="text" name="nivel_acceso" />
-
-  <label>Interés/Compromiso de Stakeholders Clave:</label>
-  <textarea name="compromiso_stakeholders"></textarea>
-
-  <h2>5. Fechas y Plazos Clave</h2>
-  <label>Fecha Límite para Presentación:</label>
-  <input type="date" name="fecha_limite" />
-
-  <label>Fecha Estimada de Decisión:</label>
-  <input type="date" name="fecha_decision" />
-
-  <label>Fecha de Inicio Estimada:</label>
-  <input type="date" name="fecha_inicio" />
-
-  <label>Plazo de Ejecución Estimado:</label>
-  <input type="text" name="plazo_ejecucion" />
-
-  <label>Hitos Clave del Cliente:</label>
-  <textarea name="hitos_clave"></textarea>
-
-  <h2>6. Retos, Obstáculos y Riesgos</h2>
-  <label>Retos Técnicos Identificados:</label>
-  <textarea name="retos_tecnicos"></textarea>
-
-  <label>Obstáculos Organizacionales/Políticos:</label>
-  <textarea name="obstaculos"></textarea>
-
-  <label>Riesgos Financieros:</label>
-  <textarea name="riesgos_financieros"></textarea>
-
-  <label>Riesgos de Cronograma:</label>
-  <textarea name="riesgos_cronograma"></textarea>
-
-  <label>Dependencias Externas:</label>
-  <textarea name="dependencias"></textarea>
-
-  <label>Competencia (ventajas):</label>
-  <textarea name="competencia_ventajas"></textarea>
-
-  <label>Requisitos No Claros/Ambiguos:</label>
-  <textarea name="requisitos_ambiguos"></textarea>
-
-  <h2>7. Calificación de la Oportunidad (1-5)</h2>
-  <label>Claridad del Problema/Necesidad (0.15):</label>
-  <input type="number" min="1" max="5" name="claridad_problema" />
-
-  <label>Alineación con Expectativas (0.10):</label>
-  <input type="number" min="1" max="5" name="alineacion_expectativas" />
-
-  <label>Presupuesto Adecuado (0.20):</label>
-  <input type="number" min="1" max="5" name="presupuesto_adecuado" />
-
-  <label>Potencial de ROI (0.15):</label>
-  <input type="number" min="1" max="5" name="potencial_roi" />
-
-  <label>Acceso a Tomadores de Decisión (0.10):</label>
-  <input type="number" min="1" max="5" name="acceso_decision" />
-
-  <label>Compromiso de Stakeholders (0.10):</label>
-  <input type="number" min="1" max="5" name="compromiso" />
-
-  <label>Realismo del Cronograma (0.05):</label>
-  <input type="number" min="1" max="5" name="realismo_cronograma" />
-
-  <label>Complejidad de Retos (0.05):</label>
-  <input type="number" min="1" max="5" name="complejidad_retos" />
-
-  <label>Nivel de Riesgo General (0.10):</label>
-  <input type="number" min="1" max="5" name="nivel_riesgo" />
-
-  <button type="submit">Enviar</button>
-</form>
+<button onclick="verMas()">Ver más</button>
 
 <script>
-// EJEMPLO: capturar envío y enviar a Google Sheets via Apps Script Web App
-// Necesitarás crear un Google Apps Script que reciba POST y guarde los datos
-const form = document.getElementById('opportunityForm');
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  const data = new FormData(form);
-  fetch('https://script.google.com/macros/s/AKfycbz4kSFWOKjQ6BlaV6xNYg5n6ZR3NMPWW6oGVGIAgnzXVXdXP8k2-o-GZoxkFdPsOqqmVQ/exec', { // Reemplaza por tu URL de Web App
-    method: 'POST',
-    body: data
-  })
-  .then(response => alert('Formulario enviado correctamente'))
-  .catch(error => alert('Error al enviar: ' + error));
-});
+  function verMas() {
+    var contenidoOculto = document.getElementById("contenido-oculto");
+    if (contenidoOculto.style.display === "none") {
+      contenidoOculto.style.display = "block";
+    } else {
+      contenidoOculto.style.display = "none";
+    }
+  }
 </script>
+<a href="#home" class="boton-regreso">Volver al inicio</a>
 
+</section>
+
+<section id="experiencia" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4"> 🏆 Experiencia en Soluciones IT</h2>
+    <div class="row text-center">
+      
+      <div class="col-md-4 mb-4" data-aos="fade-up"> 
+        <span class="badge bg-primary mb-1" style="color: gray;">🖥️ Infraestructura Data Center</span>
+        <strong>Servidores físicos y virtualización</strong>
+        <p>- Soluciones HPE, Dell y Nutanix para empresas: alta disponibilidad, rendimiento y escalabilidad.</p>
+      </div>
+      
+      <div class="col-md-4 mb-4" data-aos="fade-up">
+        <span class="badge bg-primary mb-1" style="color: gray;">📶 Networking</span>
+        <strong>Redes alámbricas e inalámbricas</strong>
+        <p>- Implementación con Cisco, Aruba y Fortinet para conectividad segura y de alto rendimiento.</p>
+      </div>
+      
+      <div class="col-md-4 mb-4" data-aos="fade-up">
+        <span class="badge bg-primary mb-1" style="color: gray;">🔒 Respaldo y Data Protection</span>
+        <strong>Backup as a Service</strong>
+        <p>- Respaldo y recuperación ante desastres para proteger la continuidad operativa del negocio.</p>
+      </div>
+      
+      <div class="col-md-4 mb-4" data-aos="fade-up">
+        <span class="badge bg-primary mb-1" style="color: gray;">🧑‍💻Virtualizacion & Hybrid Cloud</span>
+        <strong>Alternativas a VMware</strong>
+        <p>- Migración a Nutanix AHV, Hyper-V o Azure Stack para modernizar y optimizar costos.</p>
+	<p>Diseño e implementación de arquitecturas que integran nube pública y privada.</p>
+      </div>
+      
+      <div class="col-md-4 mb-4" data-aos="fade-up">
+	<span class="badge bg-primary mb-1" style="color: gray;">📹 Infraestructura Fisica Tecnologica</span>        
+	<strong>CCTV y control de acceso</strong>
+        <p>- Soluciones para plantas industriales, vigilancia, trazabilidad y cumplimiento normativo.</p>
+      </div>
+      
+          
+    </div>
+  </div>
+  <a href="#home" class="boton-regreso">Volver al inicio</a>
+</section>
+
+<section id="consultoria">
+    <h2>📈 Consultoría de Negocios</h2>
+  <p>
+    Acompaño a empresas y equipos directivos en su transformación y crecimiento, alineando las iniciativas de negocio con estrategias comerciales efectivas y soluciones digitales que impactan directamente en sus resultados.
+  </p>
+
+  <h3>🌟 ¿Cómo puedo ayudarte?</h3>
+
+  <ul>
+    <li>
+      <p><strong>✅ Estrategia Comercial</strong><br></p>
+      Diseño y optimizo planes comerciales orientados a incrementar ventas, mejorar la retención de clientes y abrir nuevos mercados. Ayudo a definir propuestas de valor claras, diferenciadoras y adaptadas a las necesidades del mercado actual.
+    </li>
+    <li>
+      <p><strong>✅ Go-to-Market para Partners</strong><br></p>
+      Desarrollo e implemento estrategias Go-to-Market pensadas especialmente para integradores de tecnología, distribuidores y socios de negocio que buscan posicionarse mejor, acelerar su ciclo comercial y capitalizar oportunidades en segmentos clave.
+    </li>
+    <li>
+      <p><strong>✅ Habilitación Digital para C-Level</strong><br></p>
+      Trabajo directamente con directores y gerentes para identificar, priorizar e implementar proyectos digitales que generen impacto real en el negocio. Desde la adopción de nuevas tecnologías hasta el uso de datos para la toma de decisiones, ayudo a convertir la digitalización en una ventaja competitiva.
+    </li>
+  </ul>
+<a href="#home" class="boton-regreso">Volver al inicio</a>
+
+</section>
+
+<section id="proyectos">
+  <h2>🛠️ Proyectos</h2>
+  <p>
+    He colaborado con empresas de distintos sectores en la planeación, implementación y optimización de proyectos tecnológicos, siempre enfocados en generar impacto tangible en la operación y crecimiento del negocio. Cada proyecto refleja mi compromiso con la calidad, la innovación y la adaptación a las necesidades específicas de cada cliente, logrando resultados que fortalecen su competitividad en el mercado.
+  </p>
+ <div class="carousel">
+  <div class="slides">
+<img src="https://raw.githubusercontent.com/ImOttoMann/ImOttoMann.github.io/refs/heads/main/images/engineer-4922449_1920.jpg" alt="Proyecto 0">
+
+    <img src="https://raw.githubusercontent.com/ImOttoMann/ImOttoMann.github.io/refs/heads/main/images/datacenter-286386_1920.jpg" alt="Proyecto 1">
+    <img src="https://raw.githubusercontent.com/ImOttoMann/ImOttoMann.github.io/refs/heads/main/images/security-camera-6634600_1920.jpg" alt="Proyecto 2">
+    <img src="https://raw.githubusercontent.com/ImOttoMann/ImOttoMann.github.io/refs/heads/main/images/engineer-4941158_1920.jpg" alt="Proyecto 3">
+    <img src="https://raw.githubusercontent.com/ImOttoMann/ImOttoMann.github.io/refs/heads/main/images/network-cabling-installation-7483084_1920.jpg" alt="Proyecto 4">
+  </div>
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+	</div>
+<a href="#home" class="boton-regreso">Volver al inicio</a>
+
+</section>
+
+<section id="asessment">
+  <h2>📋 Asessments</h2>
+  <p>
+    Realizo diagnósticos y evaluaciones detalladas para identificar oportunidades de mejora, riesgos y áreas críticas dentro de la infraestructura tecnológica y los procesos de negocio de las empresas. A través de estos assessments, ofrezco recomendaciones prácticas y priorizadas que permiten tomar decisiones informadas, optimizar inversiones y alinear la tecnología con los objetivos estratégicos de la organización.
+  </p>
+<a href="#home" class="boton-regreso">Volver al inicio</a>
+
+</section>
+
+
+
+<section id="contacto">
+  <h2>✉️ Contacto</h2>
+  <p>¿Quieres más información? Escríbeme y con gusto me pondré en contacto.</p>
+  <form action="mailto:abrahamnae@gmail.com" method="post" enctype="text/plain">
+    <label>Nombre:</label>
+    <input type="text" name="name" required>
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    <label>Mensaje:</label>
+    <textarea name="message" rows="5" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+<a href="#home" class="boton-regreso">Volver al inicio</a>
+
+</section>
+
+<footer>
+  &copy; 2025 Norberto Aguirre - Consultoría IT
+</footer>
+
+<!-- 🛡️ INICIO: Buenas prácticas de seguridad en scripts -->
+  <script>
+    // Nota: evita incluir scripts externos de sitios no confiables.
+    const slides = document.querySelector('.slides');
+    const totalSlides = slides.children.length;
+    let index = 0;
+
+    function showSlide(i) {
+      slides.style.transform = 'translateX(' + (-i * 100) + '%)';
+    }
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      index = (index - 1 + totalSlides) % totalSlides;
+      showSlide(index);
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+      index = (index + 1) % totalSlides;
+      showSlide(index);
+    });
+
+    // Cambio automático cada 2 segundos
+    setInterval(() => {
+      index = (index + 1) % totalSlides;
+      showSlide(index);
+    }, 2000);
+  </script>
+  <!-- 🛡️ FIN: Buenas prácticas de seguridad en scripts -->
 </body>
 </html>
