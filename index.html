@@ -110,6 +110,69 @@ html {
   scroll-behavior: smooth;
 }
 
+/* 🌟 INICIO: Estilos responsivos */
+
+@media (max-width: 768px) {
+  /* Menú: cambiar de horizontal a vertical */
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /* Secciones: reducir padding y ajustar ancho */
+  section {
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Banner: ajustar tamaño máximo */
+  header img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Experiencia IT: mostrar elementos en una columna */
+  .row.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .row.text-center > div {
+    width: 90%;
+  }
+
+  /* Carrusel: ajustar tamaño */
+  .carousel {
+    max-width: 90%;
+  }
+}
+
+/* Más ajuste para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  nav a {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  button, .boton-regreso {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* 🌟 FIN: Estilos responsivos */
+
 </style>
 </head>
 <body>
